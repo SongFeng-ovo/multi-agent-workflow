@@ -1,0 +1,7 @@
+# 多 Agent 智能工作流系统 —— 依赖（Python 3.10+）
+agentscope==1.0.18        # Agent 开发框架（ReAct / 多Agent / Memory / Skill）
+mem0ai==1.0.11            # 长期记忆（Mem0 记忆层 + Qdrant 本地向量库）
+mcp>=1.30.0               # MCP 协议客户端与服务端（FastMCP）
+dashscope==1.22.2         # 阿里云百炼（qwen-plus / text-embedding-v3）
+openai>=2.45.0            # 与百炼兼容模式打通 Function Calling
+pydantic>=2.0             # 结构化输出

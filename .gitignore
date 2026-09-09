@@ -1,0 +1,18 @@
+# --- 密钥：绝不提交 ---
+Key.json
+.env
+*.key
+
+# --- 运行时产物 ---
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.mem0/
+qdrant/
+mem0_data/
+outputs/index/
+
+# --- 编辑器 ---
+.idea/
+.vscode/
+.DS_Store

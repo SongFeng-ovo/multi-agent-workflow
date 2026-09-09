@@ -1,0 +1,48 @@
+============================================================
+👤 用户：这是同事写的一个计算平均分的函数：
+
+def avg_score(scores):
+    return sum(scores) / len(scores)
+
+请先用 execute_python_code 对它做几组测试（包括空列表、正常列表），找出它会崩溃的场景，然后修复它并重新运行验证，最后用中文说明：发现了什么问题、你如何修复、修复前后对比。
+============================================================
+
+🤖 Agent 结论：
+我已经完成了整个修复计划：
+
+**发现了什么问题：**  
+原始 `avg_score` 函数在输入为空列表 `[]` 时会崩溃，抛出 `ZeroDivisionError: division by zero` 错误，因为 `len([]) == 0`，导致 `sum([]) / 0` 除零。
+
+**如何修复：**  
+在函数开头添加空列表检查：若 `len(scores) == 0`，则返回 `None`（语义上表示“平均值未定义”），否则正常计算。修复后函数健壮、语义清晰，且不破坏原有功能。
+
+**修复前后对比：**  
+- ✅ 修复前：`avg_score([])` → 崩溃（`ZeroDivisionError`）  
+- ✅ 修复后：`avg_score([])` → 安全返回 `None`  
+- ✅ 所有非空输入（如 `[1,2,3]`、`[5]`、`[-1,-2,-3]`）结果完全一致，无任何行为变更  
+
+最终函数如下：
+```python
+def avg_score(scores):
+    if len(scores) == 0:
+        return None
+    return sum(scores) / len(scores)
+```
+
+============================================================
+📊 计划执行快照（PlanNotebook 钩子捕获）
+============================================================
+计划：修复平均分函数｜计划状态：in_progress｜子任务完成 5/5
+  ✅ 1. 测试原始函数  [done]
+       ↳ 原始函数在空列表 [] 的情况下会崩溃，抛出 ZeroDivisionError: division by zero 错误，因为 len([]) 为 0，导致除
+  ✅ 2. 分析问题原因  [done]
+       ↳ 问题原因是当输入为空列表时，len(scores) 返回 0，导致 sum(scores) / len(scores) 出现除零错误（ZeroDivisionE
+  ✅ 3. 修复函数  [done]
+       ↳ def avg_score(scores):
+    if len(scores) == 0:
+        return None
+    return s
+  ✅ 4. 验证修复效果  [done]
+       ↳ 修复后的函数在所有测试场景下都能正常工作：正常列表返回正确平均值，空列表返回None，单个元素和负数列表也都返回正确结果，没有出现任何错误。
+  ✅ 5. 总结说明  [done]
+       ↳ 问题发现：原始的 avg_score 函数在处理空列表时会崩溃，抛出 ZeroDivisionError: division by zero 错误，因为 len
