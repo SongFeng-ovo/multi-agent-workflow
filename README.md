@@ -2,7 +2,7 @@
 
 面向企业场景的智能 Agent 系统，覆盖**从单 Agent 工具调用 → 任务规划 → 多 Agent 协作 → 记忆管理 → 技能固化**的完整开发生命周期。系统让 Agent 从"只会对话"升级为"可自主执行复杂任务"，并在真实运行中沉淀了可复现的对比数据。
 
-> 📌 本项目为学习作品，基于 [AlibabaCloudDocs/aliyun_acp_learning](https://github.com/AlibabaCloudDocs/aliyun_acp_learning)（阿里云大模型 ACP 认证 · C3 构建 Agent 系统，Apache-2.0）复现并工程化。见 [LICENSE](./LICENSE) 与文末「来源与致谢」。
+>  本项目为基于 [AlibabaCloudDocs/aliyun_acp_learning](https://github.com/AlibabaCloudDocs/aliyun_acp_learning)（阿里云大模型 ACP 认证 · C3 构建 Agent 系统，Apache-2.0）。
 >
 > ⚠️ C4（模型蒸馏 + LoRA 微调、多模态内容安全 & 岗位级权限过滤）依赖 GPU 与云端服务，见文末「Roadmap」。
 
@@ -77,5 +77,3 @@ python run_all.py
 - 课程与代码蓝本：[AlibabaCloudDocs/aliyun_acp_learning](https://github.com/AlibabaCloudDocs/aliyun_acp_learning)（阿里云大模型 ACP 认证 · C3 构建 Agent 系统，**Apache-2.0**）
 - 模型服务：阿里云百炼 `qwen-plus` / `text-embedding-v3`
 - 框架：AgentScope（ReAct/多 Agent/Memory/Skill）、MCP、Mem0
-
-**注意**：`Key.json` 已被 `.gitignore` 排除，切勿提交真实 API Key。
